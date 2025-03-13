@@ -832,40 +832,38 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.AspNetCore.OpenApi >= 8.0.11",
+      "Npgsql >= 9.0.3",
       "Repositories >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\": {}
+    "C:\\Users\\udayr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\API\\API.csproj",
+      "projectUniqueName": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\",
-      "outputPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\API\\obj\\",
+      "projectPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\udayr\\.nuget\\packages\\",
+      "outputPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Saiyed Vasim Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\udayr\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj"
+            "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\Repositories.csproj"
             }
           }
         }
@@ -888,6 +886,10 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[8.0.11, )"
+          },
+          "Npgsql": {
+            "target": "Package",
+            "version": "[9.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -913,7 +915,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

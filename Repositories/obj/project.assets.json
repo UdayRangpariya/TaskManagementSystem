@@ -348,27 +348,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\": {}
+    "C:\\Users\\udayr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj",
-      "packagesPath": "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\",
-      "outputPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\obj\\",
+      "projectPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+      "packagesPath": "C:\\Users\\udayr\\.nuget\\packages\\",
+      "outputPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Saiyed Vasim Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\udayr\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -417,7 +414,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

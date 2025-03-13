@@ -1,5 +1,7 @@
 
 using Npgsql;
+using Repositories.Implementation;
+using Repositories.Interface;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<NpgsqlConnection>(_ => new NpgsqlConnection(builder.Configuration.GetConnectionString("pgconn")));
+// Get the connection string
+var connectionString = builder.Configuration.GetConnectionString("pgconn");
+// Register Auth service with the connection string parameter
+builder.Services.AddScoped<IAuth>(provider => new Auth(connectionString));
 
 var app = builder.Build();
 
