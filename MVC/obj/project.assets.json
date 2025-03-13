@@ -366,32 +366,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\udayr\\.nuget\\packages\\": {}
+    "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\MVC\\MVC.csproj",
+      "projectUniqueName": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\MVC\\MVC.csproj",
-      "packagesPath": "C:\\Users\\udayr\\.nuget\\packages\\",
-      "outputPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\MVC\\obj\\",
+      "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\MVC.csproj",
+      "packagesPath": "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\",
+      "outputPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\udayr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Saiyed Vasim Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\Case Point\\Code Work\\c#2\\API\\TaskManagementSystem\\Repositories\\Repositories.csproj"
+            "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj"
             }
           }
         }
@@ -429,7 +432,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
