@@ -37,3 +37,11 @@ D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\obj\Debug\net8.0\refint
 D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\obj\Debug\net8.0\API.pdb
 D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\obj\Debug\net8.0\ref\API.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Case Point\Code Work\c#2\API\TaskManagementSystem\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
