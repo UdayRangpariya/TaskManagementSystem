@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K8uTL6dZZGA=",
+  "dgSpecHash": "fWvYf5TCSl4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\MVC\\MVC.csproj",
+  "projectFilePath": "D:\\00_Casepoint\\TaskManagementSystem\\MVC\\MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\meet1\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\meet1\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
@@ -12,12 +12,5 @@
     "C:\\Users\\meet1\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\meet1\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\MVC\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

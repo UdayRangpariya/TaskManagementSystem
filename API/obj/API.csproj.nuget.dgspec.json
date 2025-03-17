@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj": {}
+    "D:\\00_Casepoint\\TaskManagementSystem\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj": {
+    "D:\\00_Casepoint\\TaskManagementSystem\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj",
+        "projectUniqueName": "D:\\00_Casepoint\\TaskManagementSystem\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj",
+        "projectPath": "D:\\00_Casepoint\\TaskManagementSystem\\api\\API.csproj",
         "packagesPath": "C:\\Users\\meet1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\obj\\",
+        "outputPath": "D:\\00_Casepoint\\TaskManagementSystem\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meet1\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj"
+              "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
+                "projectPath": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
+    "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+        "projectPath": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj",
         "packagesPath": "C:\\Users\\meet1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\obj\\",
+        "outputPath": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meet1\\AppData\\Roaming\\NuGet\\NuGet.Config"

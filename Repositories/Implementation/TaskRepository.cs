@@ -57,7 +57,7 @@ namespace tmp
             {
                 await _connection.OpenAsync();
                 using var cmd = new NpgsqlCommand(
-                    "SELECT * FROM t_tasks where c_assigned_to = 2 ORDER BY c_created_at DESC ",
+                    "SELECT * FROM t_tasks where c_assigned_to = 4 ORDER BY c_created_at DESC ",
                     _connection);
 
                 using var reader = await cmd.ExecuteReaderAsync();

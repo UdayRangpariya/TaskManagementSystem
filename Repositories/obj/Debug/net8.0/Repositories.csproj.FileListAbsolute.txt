@@ -76,3 +76,16 @@ C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj
 C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
 C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
 C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\00_Casepoint\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll

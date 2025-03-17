@@ -5,8 +5,7 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 
-<!-- Include Kendo UI Theme -->
-@* <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.2.718/styles/kendo.default.min.css" /> *@
+
 
 <!-- Custom CSS -->
 <style>
@@ -71,9 +70,11 @@
     .k-grid .k-button {
         padding: 6px 10px;
     }
+
     #grid {
-    overflow: hidden; /* This can hide columns */
-}
+        overflow: hidden;
+        /* This can hide columns */
+    }
 
     /* Make the grid responsive */
     @@media(max - width: 768px) {
@@ -85,13 +86,155 @@
                 white-space: nowrap;
             }
         }
+
+        /* Container for the search bar and buttons */
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Space between input and buttons */
+            margin-bottom: 20px;
+            /* Space between search bar and grid */
+            margin-left: 875px;
+        }
+
+        /* Style for the search input */
+        #searchInput {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex: 0;
+            /* Allow input to grow and take available space */
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: #007bff;
+            /* Highlight input on focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Style for the search and reset buttons */
+        #searchButton,
+        #resetButton {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #searchButton {
+            background-color: #007bff;
+            /* Blue color for search button */
+            color: white;
+        }
+
+        #searchButton:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+            transform: scale(1.05);
+            /* Slight zoom effect */
+        }
+
+        #resetButton {
+            background-color: #6c757d;
+            /* Gray color for reset button */
+            color: white;
+        }
+
+        #resetButton:hover {
+            background-color: #5a6268;
+            /* Darker gray on hover */
+            transform: scale(1.05);
+            /* Slight zoom effect */
+        }
     </style>
 
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search tasks by title..." />
+        <button id="searchButton">Search</button>
+        <button id="resetButton">Reset</button>
+    </div>
 
     <div id="grid" style="width: 1200px;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @section Scripts
     {
         <script>
+            var isEditing = false;
+            // Inside the statusDropDownEditor function
+            function statusDropDownEditor(container, options) {
+                // Create the dropdown
+                var input = $('<input required id="c_status" name="c_status">')
+                    .appendTo(container)
+                    .kendoDropDownList({
+                        dataSource: [
+                            { text: "Pending", value: 1 },
+                            { text: "In Progress", value: 2 },
+                            { text: "Completed", value: 3 }
+                        ],
+                        dataTextField: "text",
+                        dataValueField: "value",
+                        optionLabel: "Select Status"
+                    }).data("kendoDropDownList");
+
+                // Prevent popup from closing when interacting with the dropdown
+                input.wrapper.on("click mousedown mouseup", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+
+                // When the dropdown opens
+                input.bind("open", function (e) {
+                    var list = input.list;
+                    var popup = input.popup;
+
+                    // Prevent any clicks within the dropdown list from bubbling up
+                    list.on("mousedown mouseup click", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    });
+
+                    // Prevent clicks on list items from closing the popup
+                    popup.element.on("mousedown mouseup click", ".k-item", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    });
+                });
+
+                // Prevent document clicks from closing the popup while dropdown is open
+                $(document).on("mousedown.statusDropdown", function (e) {
+                    var $target = $(e.target);
+                    if ($target.closest(".k-list-container").length ||
+                        $target.closest(".k-dropdown-wrap").length ||
+                        $target.closest(".k-popup").length) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+                });
+
+                // Clean up events when dropdown closes
+                input.bind("close", function () {
+                    $(document).off("mousedown.statusDropdown");
+                });
+
+                // Handle value changes
+                input.bind("change", function (e) {
+                    e.stopPropagation();
+                    // Keep popup open and centered
+                    setTimeout(function () {
+                        var popup = container.closest(".k-popup-edit-form").data("kendoWindow");
+                        if (popup) {
+                            popup.center();
+                        }
+                    }, 0);
+                });
+            }
             $(document).ready(function () {
                 var dataSource = new kendo.data.DataSource({
                     transport: {
@@ -107,8 +250,21 @@
                             type: "POST",
                             contentType: "application/json",
                             dataType: "json",
+                            success: function (response) {
+                                console.log("Task added successfully:", response); // Debugging
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Search Complete',
+                                    text: 'Tasks matching your search term have been loaded.',
+                                });
+                            },
                             error: function (e) {
-                                console.error("Error creating data:", e);
+                                console.error("Error creating data:", e); // Debugging
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: 'Failed to add the task. Please try again.',
+                                });
                             }
                         },
                         update: {
@@ -116,8 +272,21 @@
                             type: "PUT",
                             contentType: "application/json",
                             dataType: "json",
+                            success: function (response) {
+                                console.log("Task updated successfully:", response); // Debugging
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Task Updated',
+                                    text: 'The task has been successfully updated.',
+                                });
+                            },
                             error: function (e) {
-                                console.error("Error updating data:", e);
+                                console.error("Error updating data:", e); // Debugging
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: 'Failed to update the task. Please try again.',
+                                });
                             }
                         },
                         destroy: {
@@ -127,15 +296,28 @@
                             type: "DELETE",
                             contentType: "application/json",
                             dataType: "json",
+                            success: function (response) {
+                                console.log("Task deleted successfully:", response); // Debugging
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Task Deleted',
+                                    text: 'The task has been successfully deleted.',
+                                });
+                            },
                             error: function (e) {
-                                console.error("Error deleting data:", e);
+                                console.error("Error deleting data:", e); // Debugging
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: 'Failed to delete the task. Please try again.',
+                                });
                             }
                         },
                         parameterMap: function (data, type) {
                             if (type === "create" || type === "update") {
                                 if (type === "create") {
                                     data.c_created_by = 1;
-                                    data.c_assigned_to = 2;
+                                    data.c_assigned_to = 4;
                                 }
                                 if (type === "update") {
                                     data.c_task_id = data.c_task_id;
@@ -155,14 +337,14 @@
                                 c_title: {
                                     type: "string",
                                     validation: {
-                                        required: { message: "Title is required" } // Custom validation message
+                                        required: { message: "Title is required" }
                                     }
                                 },
                                 c_description: { type: "string" },
                                 c_status: {
                                     type: "number",
                                     validation: {
-                                        required: { message: "Status is required" } // Custom validation message
+                                        required: { message: "Status is required" }
                                     }
                                 },
                                 c_priority: {
@@ -182,11 +364,19 @@
                         }
                     }
                 });
+                $(document).mouseup(function (e) {
+                    var popup = $(".k-window"); // Get the Kendo UI popup window
+
+                    if (popup.length > 0 && !popup.is(e.target) && popup.has(e.target).length === 0) {
+                        var grid = $("#grid").data("kendoGrid");
+                        grid.cancelChanges(); // Cancel the edit mode
+                    }
+                });
 
                 $("#grid").kendoGrid({
                     dataSource: dataSource,
                     columns: [
-                        { field: "c_task_id", title: "Task ID", width: "100px" },
+                        @* { field: "c_task_id", title: "Task ID", width: "100px" }, *@
                         { field: "c_title", title: "Title", width: "150px" },
                         { field: "c_description", title: "Description", width: "200px" },
                         { field: "c_status", title: "Status", editor: statusDropDownEditor, template: "#= statusText(c_status) #", width: "120px" },
@@ -194,8 +384,8 @@
                         { field: "c_due_date", title: "Due Date", format: "{0:MM/dd/yyyy}", width: "120px" },
                         { field: "c_created_at", title: "Created At", format: "{0:MM/dd/yyyy}", width: "120px", editable: false },
                         { field: "c_updated_at", title: "Updated At", format: "{0:MM/dd/yyyy}", width: "120px", editable: false },
-                        { field: "c_created_by", title: "Created By", width: "120px", editable: false },
-                        { field: "c_assigned_to", title: "Assigned To", width: "120px", editable: false },
+                        { field: "c_created_by", title: "Created By", width: "120px", editable: false, template: "#= createdByText(c_created_by) #" },
+                        @* { field: "c_assigned_to", title: "Assigned To", width: "120px", editable: false }, *@
                         {
                             command: [
                                 {
@@ -213,7 +403,20 @@
                             width: "150px"
                         }
                     ],
-                    editable: "popup",
+                    editable: {
+                        mode: "popup",
+                        window: {
+                            title: "Edit Task",
+                            animation: false,
+                            open: function (e) {
+                                // Prevent the window from closing when clicking inside it
+                                e.sender.element.data("kendoWindow").wrapper.find(".k-window-content").on("mousedown", function (e) {
+                                    e.stopPropagation();
+                                });
+                            }
+                        }
+                    },
+
                     toolbar: [
                         {
                             name: "create",
@@ -243,11 +446,144 @@
                             update: "Update"
                         },
                         editable: {
-                            confirmation: "Are you sure you want to delete this record?",
-                            cancel: "Cancel",
-                            save: "Save"
+                            confirmation: false
                         }
+                    },
+                    // Prevent edit popup for Admin tasks
+
+
+                    beforeEdit: function (e) {
+                        var dataItem = e.model;
+                        var grid = e.sender;
+
+                        // If already editing, prevent showing Swal again
+                        if (isEditing) {
+                            return;
+                        }
+
+                        if (dataItem.c_created_by === 1) {
+                            e.preventDefault(); // Stop the default edit popup
+
+                            Swal.fire({
+                                icon: "info",
+                                title: "Editing Restricted",
+                                text: "Only the 'Status' field is editable.",
+                                confirmButtonText: "OK"
+                            }).then(() => {
+                                isEditing = true; // Set flag to true before opening edit popup
+
+                                var targetRow = grid.tbody.find("tr[data-uid='" + dataItem.uid + "']");
+                                grid.editRow(targetRow);
+                            });
+                        }
+                    },
+
+                    edit: function (e) {
+                        var dataItem = e.model;
+
+                        if (dataItem.c_created_by === 1) {
+                            e.container.find("input[name], textarea[name], select[name]").each(function () {
+                                var fieldName = $(this).attr("name");
+                                if (fieldName !== "c_status") {
+                                    $(this).prop("disabled", true);
+                                }
+                            });
+
+                            setTimeout(function () {
+                                var statusField = e.container.find("input[name='c_status']");
+
+                                if (statusField.data("kendoTooltip")) {
+                                    statusField.data("kendoTooltip").destroy();
+                                }
+
+                                statusField.kendoTooltip({
+                                    content: "Only the Status field is editable.",
+                                    autoHide: false,
+                                    width: 250,
+                                    animation: {
+                                        open: {
+                                            effects: "fade:in",
+                                            duration: 300
+                                        }
+                                    }
+                                });
+
+                                var tooltipElement = statusField.data("kendoTooltip").popup.element;
+                                tooltipElement.css({
+                                    position: "fixed",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50%, -50%)",
+                                    zIndex: 9999,
+                                    background: "#333",
+                                    color: "#fff",
+                                    padding: "10px",
+                                    borderRadius: "8px"
+                                });
+
+                                statusField.data("kendoTooltip").show();
+                            }, 500);
+                        }
+                    },
+
+                    save: function () {
+                        isEditing = false; // Reset the flag when saving
+                    },
+
+                    cancel: function () {
+                        isEditing = false; // Reset the flag when canceling
+                    },
+
+                    dataBound: function () {
+                        $(".k-grid-delete").off("click").on("click", function (e) {
+                            e.preventDefault(); // Prevent Kendo Grid's default delete behavior
+
+                            var grid = $("#grid").data("kendoGrid");
+                            var row = $(this).closest("tr");
+                            var dataItem = grid.dataItem(row);
+
+                            if (dataItem.c_created_by === 1) {
+                                // If the task is not deletable, just show SweetAlert
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Not Deletable',
+                                    text: 'This task cannot be deleted because it was created by Admin.',
+                                });
+                            } else {
+                                // Confirmation popup for deletable tasks
+                                Swal.fire({
+                                    title: "Are you sure?",
+                                    text: "You won't be able to revert this!",
+                                    icon: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#d33",
+                                    cancelButtonColor: "#3085d6",
+                                    confirmButtonText: "Yes, delete it!"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        // Send DELETE request to API
+                                        $.ajax({
+                                            url: "http://localhost:5245/api/Task/" + dataItem.c_task_id,
+                                            type: "DELETE",
+                                            success: function () {
+                                                grid.dataSource.remove(dataItem); // Remove the item from dataSource
+                                                grid.dataSource.sync(); // Sync changes with the server
+                                                Swal.fire("Deleted!", "Your task has been deleted.", "success");
+                                            },
+                                            error: function () {
+                                                Swal.fire("Error", "Failed to delete the task. Please try again.", "error");
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        });
                     }
+                });
+
+                $(document).on("click", ".k-list-container .k-item", function (e) {
+                    e.stopPropagation();
+                    return false;
                 });
 
                 dataSource.bind("requestEnd", function (e) {
@@ -259,22 +595,56 @@
                 $("#grid").on("click", ".k-grid-cancel-changes", function () {
                     dataSource.cancelChanges();
                 });
+                $("#searchButton").click(function () {
+                    var searchTerm = $("#searchInput").val().trim();
+                    if (searchTerm) {
+                        $.ajax({
+                            url: "http://localhost:5245/api/Task/task/" + searchTerm,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                var grid = $("#grid").data("kendoGrid");
+                                grid.dataSource.data(data);
+                                if (data.length > 0) {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Search Complete',
+                                        text: 'Tasks matching your search term have been loaded.',
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        icon: 'info',
+                                        title: 'No Results',
+                                        text: 'No tasks found matching your search term.',
+                                    });
+                                }
+                            },
+                            error: function (e) {
+                                console.error("Error searching tasks:", e);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: 'Failed to search for tasks.',
+                                });
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Empty Search',
+                            text: 'Please enter a search term.',
+                        });
+                    }
+                });
+
+                // Reset functionality
+                $("#resetButton").click(function () {
+                    $("#searchInput").val("");
+                    var grid = $("#grid").data("kendoGrid");
+                    grid.dataSource.read();
+                });
             });
 
-            function statusDropDownEditor(container, options) {
-                $('<input required id="c_status" name="c_status">')
-                    .appendTo(container)
-                    .kendoDropDownList({
-                        dataSource: [
-                            { text: "Pending", value: 1 },
-                            { text: "In Progress", value: 2 },
-                            { text: "Completed", value: 3 }
-                        ],
-                        dataTextField: "text",
-                        dataValueField: "value",
-                        optionLabel: "Select Status"
-                    });
-            }
 
             function statusText(status) {
                 switch (status) {
@@ -282,6 +652,12 @@
                     case 2: return "In Progress";
                     case 3: return "Completed";
                     default: return "Unknown";
+                }
+            }
+            function createdByText(createdBy) {
+                switch (createdBy) {
+                    case 1: return "Admin";
+                    default: return "User";
                 }
             }
         </script>

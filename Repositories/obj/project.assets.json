@@ -353,11 +353,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+      "projectPath": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\meet1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\obj\\",
+      "outputPath": "D:\\00_Casepoint\\TaskManagementSystem\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\meet1\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -417,13 +417,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
