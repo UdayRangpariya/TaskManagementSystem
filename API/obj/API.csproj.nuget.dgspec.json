@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj": {}
+    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj": {
+    "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj",
+        "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj",
         "packagesPath": "C:\\Users\\meet1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\obj\\",
+        "outputPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meet1\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -47,6 +47,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Elastic.Clients.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.17.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.11, )"

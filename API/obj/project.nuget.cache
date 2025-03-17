@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qAldf+eHiDM=",
+  "dgSpecHash": "Zuaq0c4Rp+c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\api\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\meet1\\.nuget\\packages\\elastic.clients.elasticsearch\\8.17.1\\elastic.clients.elasticsearch.8.17.1.nupkg.sha512",
+    "C:\\Users\\meet1\\.nuget\\packages\\elastic.transport\\0.5.7\\elastic.transport.0.5.7.nupkg.sha512",
     "C:\\Users\\meet1\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\meet1\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
     "C:\\Users\\meet1\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.11\\microsoft.aspnetcore.openapi.8.0.11.nupkg.sha512",

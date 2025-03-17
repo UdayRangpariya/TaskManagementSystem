@@ -1,0 +1,78 @@
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+E:\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskTrackPro\TaskManagementSystem (2)\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\internship\TaskTrackPro\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\00_Casepoint\TaskManagementSystem\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+C:\Users\meet1\OneDrive\Desktop\New folder\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
