@@ -837,35 +837,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\": {}
+    "C:\\Users\\meet1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\",
-      "outputPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\API\\obj\\",
+      "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\meet1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Saiyed Vasim Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\meet1\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj"
+            "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\meet1\\OneDrive\\Desktop\\New folder\\TaskManagementSystem\\Repositories\\Repositories.csproj"
             }
           }
         }
@@ -913,7 +910,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
