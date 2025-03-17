@@ -605,13 +605,7 @@
                             success: function (data) {
                                 var grid = $("#grid").data("kendoGrid");
                                 grid.dataSource.data(data);
-                                if (data.length > 0) {
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Search Complete',
-                                        text: 'Tasks matching your search term have been loaded.',
-                                    });
-                                } else {
+                                if (data.length <= 0) {
                                     Swal.fire({
                                         icon: 'info',
                                         title: 'No Results',
@@ -660,5 +654,5 @@
                     default: return "User";
                 }
             }
-        </script>
-    }
+        </script>
+    }
