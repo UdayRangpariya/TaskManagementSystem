@@ -201,6 +201,7 @@
     /* Search box */
     .search-wrapper {
         position: relative;
+        margin-right: 10px;
     }
 
     .search-wrapper .form-control {
@@ -332,6 +333,20 @@
         color: white;
     }
 
+        /* Creator badge styles */
+    .badge.bg-primary {
+        background-color: var(--primary-color);
+    }
+    
+    .badge.bg-secondary {
+        background-color: var(--light-text);
+    }
+    
+    .badge.bg-orange {
+        background-color: #fd7e14;
+        color: white;
+    }
+
     /* Empty state */
     .empty-state {
         text-align: center;
@@ -390,16 +405,16 @@
     <div class="dashboard-card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">My Tasks</h5>
-            <div class="search-wrapper" style="width: 250px;">
-                <i class="fas fa-search search-icon"></i>
-                <div class="d-flex gap-2">
-                    <select id="creatorFilter" class="form-select" style="width: auto;">
-                        <option value="all">All Tasks</option>
-                        <option value="admin">Admin Tasks</option>
-                        <option value="my">My Tasks</option>
-                    </select>
-
+            <div class="d-flex align-items-center gap-3">
+                <div class="search-wrapper" style="width: 250px;">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search tasks...">
                 </div>
+                <select id="creatorFilter" class="form-select" style="width: auto;">
+                    <option value="all">All Tasks</option>
+                    <option value="admin">Admin Tasks</option>
+                    <option value="my">My Tasks</option>
+                </select>
             </div>
         </div>
         <div class="card-body p-0">
@@ -413,6 +428,7 @@
                             <th style="width: 120px;">Status</th>
                             <th style="width: 150px;">Due Date</th>
                             <th style="width: 120px;">Priority</th>
+                            <th style="width: 120px;">Assigned By</th>
                             <th style="width: 120px;">Actions</th>
                         </tr>
                     </thead>
@@ -594,9 +610,9 @@
                 return $.ajax({ ...defaults, ...options });
             }
 
-                  $('#creatorFilter').on('change', function () {
+                  $('#creatorFilter').on('change', function() {
                 const filterValue = $(this).val();
-                const userId = $("#userId").val();
+                const userId = currentUser.userId || 0;
 
                 // Show loading indicator
                 $('#taskLoadingIndicator').show();
@@ -604,9 +620,12 @@
                 $('#noTasksMessage').hide();
 
                 $.ajax({
-                    url: 'http://localhost:5245/api/User/GetAllTasks',
+                    url: `http://localhost:5245/api/User/GetAllTasks/${userId}`,
                     type: 'GET',
-                    success: function (data) {
+                    headers: {
+                        'Authorization': 'Bearer ' + getAuthToken()
+                    },
+                    success: function(data) {
                         $('#taskLoadingIndicator').hide();
                         $('#taskTable tbody').empty();
 
@@ -614,14 +633,67 @@
                             // Filter the data based on selection
                             const filteredData = data.filter(task => {
                                 if (filterValue === 'all') return true;
-                                if (filterValue === 'admin') return task.c_created_by === 1;
-                                if (filterValue === 'my') return task.c_created_by === parseInt(userId);
+                                if (filterValue === 'admin') return task.c_created_by !== userId;
+                                if (filterValue === 'my') return task.c_created_by === userId;
                                 return true;
                             });
 
                             if (filteredData.length > 0) {
-                                filteredData.forEach(function (task) {
-                                    appendTaskToTable(task);
+                                // Re-use the same display logic for the filtered data
+                                filteredData.forEach(function(task) {
+                                    const createdBy = task.c_created_by;
+                                    const isAdminTask = createdBy !== userId;
+                                    const creatorLabel = isAdminTask ? '<span class="badge bg-primary">Admin</span>' : '<span class="badge bg-secondary">Me</span>';
+                                    
+                                    let statusBadge = '';
+                                    switch (task.c_status) {
+                                        case 'pending':
+                                            statusBadge = '<span class="badge badge-new">New</span>';
+                                            break;
+                                        case 'in_progress':
+                                            statusBadge = '<span class="badge badge-in-progress">In Progress</span>';
+                                            break;
+                                        case 'completed':
+                                            statusBadge = '<span class="badge badge-completed">Completed</span>';
+                                            break;
+                                    }
+
+                                    let priorityBadge = '';
+                                    switch (task.c_priority) {
+                                        case 1:
+                                            priorityBadge = '<span class="badge bg-info">Low</span>';
+                                            break;
+                                        case 2:
+                                            priorityBadge = '<span class="badge bg-warning">Medium</span>';
+                                            break;
+                                        case 3:
+                                            priorityBadge = '<span class="badge bg-orange">High</span>';
+                                            break;
+                                        case 4:
+                                            priorityBadge = '<span class="badge bg-danger">Urgent</span>';
+                                            break;
+                                    }
+
+                                    const row = `
+                                    <tr>
+                                        <td>${task.c_task_id}</td>
+                                        <td>${task.c_title}</td>
+                                        <td>${task.c_description || ''}</td>
+                                        <td>${statusBadge}</td>
+                                        <td>${new Date(task.c_due_date).toLocaleDateString()}</td>
+                                        <td>${priorityBadge}</td>
+                                        <td>${creatorLabel}</td>
+                                        <td>
+                                            <div class="d-flex gap-1">
+                                                <button class="btn btn-sm btn-primary btn-action edit-task" data-id="${task.c_task_id}" data-admin="${isAdminTask}">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                ${isAdminTask ? '' : `<button class="btn btn-sm btn-danger btn-action delete-task" data-id="${task.c_task_id}"><i class="fas fa-trash"></i></button>`}
+                                            </div>
+                                        </td>
+                                    </tr>`;
+                                    
+                                    $('#taskTable tbody').append(row);
                                 });
                                 $('#noTasksMessage').hide();
                             } else {
@@ -631,7 +703,7 @@
                             $('#noTasksMessage').show();
                         }
                     },
-                    error: function (error) {
+                    error: function(error) {
                         $('#taskLoadingIndicator').hide();
                         $('#noTasksMessage').show();
                         console.error('Error loading tasks:', error);
@@ -840,15 +912,82 @@
             }, 300));
 
 
-            $('#btnSaveTask').click(function () {
-                saveTask();
+            $('#btnSaveTask').click(function() {
+                const taskId = $('#taskId').val();
+                const isNewTask = taskId === '0';
+                const isAdminTask = !isNewTask && $('#taskTitle').prop('disabled');
+                
+                let statusValue;
+                switch ($('#taskStatus').val()) {
+                    case '0': statusValue = 'pending'; break;
+                    case '1': statusValue = 'in_progress'; break; 
+                    case '2': statusValue = 'completed'; break;
+                    default: statusValue = 'pending';
+                }
+                
+                let taskData = {
+                    c_task_id: parseInt(taskId),
+                    c_status: statusValue
+                };
+
+                // If not an admin task or it's a new task, add all fields
+                if (!isAdminTask || isNewTask) {
+                    taskData = {
+                        ...taskData,
+                        c_title: $('#taskTitle').val(),
+                        c_description: $('#taskDescription').val(),
+                        c_priority: parseInt($('#taskPriority').val()),
+                        c_due_date: $('#taskDueDate').val() ? new Date($('#taskDueDate').val()).toISOString() : null,
+                        c_assigned_to: currentUser.userId,
+                        c_created_by: currentUser.userId
+                    };
+                }
+
+                const url = isNewTask 
+                    ? 'http://localhost:5245/api/User/AddTask' 
+                    : 'http://localhost:5245/api/User/UpdateTask/' + taskId;
+                
+                const method = isNewTask ? 'POST' : 'PUT';
+
+                $.ajax({
+                    url: url,
+                    type: method,
+                    contentType: 'application/json',
+                    data: JSON.stringify(taskData),
+                    headers: {
+                        'Authorization': 'Bearer ' + getAuthToken()
+                    },
+                    success: function(response) {
+                        $('#taskModal').modal('hide');
+                        toastr.success(isNewTask ? 'Task created successfully!' : 'Task updated successfully!');
+                        loadTasks();
+                    },
+                    error: function(xhr, error) {
+                        console.error('Error saving task:', error);
+                        console.error('Response:', xhr.responseText);
+                        toastr.error('Failed to save task.');
+                    }
+                });
             });
 
-            $('#btnAddTask, #btnEmptyStateAddTask').click(function () {
-                resetTaskForm();
+            // New Task button handlers
+            $('#btnAddTask, #btnEmptyStateAddTask').on('click', function() {
+                // Reset the form
+                $('#taskForm')[0].reset();
+                $('#taskId').val(0);
+                
+                // Enable all fields for new task
+                            $('#taskTitle').prop('disabled', false);
+                            $('#taskDescription').prop('disabled', false);
+                            $('#taskPriority').prop('disabled', false);
+                            $('#taskDueDate').prop('disabled', false);
+                            $('#taskStatus').prop('disabled', false);
+                
+                // Set default due date (7 days from today)
                 const defaultDueDate = new Date();
                 defaultDueDate.setDate(defaultDueDate.getDate() + 7);
                 $('#taskDueDate').val(defaultDueDate.toISOString().slice(0, 16));
+                
                 $('#taskModalLabel').text('Add New Task');
                 $('#taskModal').modal('show');
             });
@@ -863,21 +1002,90 @@
             });
 
             // Fix the delete confirmation button handler
-            $(document).on('click', '#btnConfirmDelete', function () {
+            $('#btnConfirmDelete').on('click', function () {
                 console.log(`Confirming deletion for task ID: ${taskToDeleteId}`);
+                
                 if (taskToDeleteId) {
-                    deleteTask(taskToDeleteId);
+                    authenticatedAjax({
+                        url: `http://localhost:5245/api/User/${taskToDeleteId}`,
+                        type: 'DELETE',
+                        success: function (response) {
+                            $('#deleteConfirmationModal').modal('hide');
+                            toastr.success('Task deleted successfully!');
+                            loadTasks();
+                        },
+                        error: function (xhr, error) {
+                            console.error(`Error deleting task ID ${taskToDeleteId}:`, error);
+                            toastr.error('Failed to delete task. It may be assigned by an admin.');
+                            $('#deleteConfirmationModal').modal('hide');
+                        }
+                    });
                 } else {
                     console.error('No task ID found for deletion');
                     toastr.error('Could not identify the task to delete.');
+                    $('#deleteConfirmationModal').modal('hide');
                 }
             });
 
-            // Add this after your delete button handlers
-            $(document).on('click', '.btn-edit', function () {
-                const taskId = $(this).data('task-id');
-                console.log(`Edit button clicked for task ID: ${taskId}`);
-                getTaskById(taskId);
+            // Edit task handler
+            $(document).on('click', '.edit-task', function () {
+                const taskId = $(this).data('id');
+                const isAdminTask = $(this).data('admin') === true;
+                
+                // Reset form fields and clear previous data
+                $('#taskForm')[0].reset();
+                $('#taskId').val(0);
+                
+                // Fetch task details
+                $.ajax({
+                    url: `http://localhost:5245/api/User/${taskId}`,
+                    type: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + getAuthToken()
+                    },
+                    success: function (task) {
+                        $('#taskId').val(task.c_task_id);
+                        $('#taskTitle').val(task.c_title);
+                        $('#taskDescription').val(task.c_description);
+                        
+                        // Set status based on the task status string
+                        let statusVal = '0'; // Default to 'New'
+                        if (task.c_status === 'in_progress') statusVal = '1';
+                        else if (task.c_status === 'completed') statusVal = '2';
+                        $('#taskStatus').val(statusVal);
+                        
+                        $('#taskPriority').val(task.c_priority);
+                        
+                        if (task.c_due_date) {
+                            const dueDate = new Date(task.c_due_date);
+                            const formattedDate = dueDate.toISOString().slice(0, 16);
+                            $('#taskDueDate').val(formattedDate);
+                        }
+                        
+                        // Disable fields for admin tasks except status
+                        if (isAdminTask) {
+                            $('#taskModalLabel').text('Update Task Status');
+                            $('#taskTitle').prop('disabled', true);
+                            $('#taskDescription').prop('disabled', true);
+                            $('#taskPriority').prop('disabled', true);
+                            $('#taskDueDate').prop('disabled', true);
+                            $('#taskStatus').prop('disabled', false);
+                        } else {
+                            $('#taskModalLabel').text('Edit Task');
+                            $('#taskTitle').prop('disabled', false);
+                            $('#taskDescription').prop('disabled', false);
+                            $('#taskPriority').prop('disabled', false);
+                            $('#taskDueDate').prop('disabled', false);
+                            $('#taskStatus').prop('disabled', false);
+                        }
+                        
+                        $('#taskModal').modal('show');
+                    },
+                    error: function (error) {
+                        console.error('Error fetching task:', error);
+                        toastr.error('Failed to load task details.');
+                    }
+                });
             });
 
             function deleteTask(taskId) {
@@ -910,30 +1118,92 @@
                 $('#taskTable tbody').empty();
                 $('#noTasksMessage').hide();
 
-                // Get the current user ID from the page variable
-                const userId = currentUserId;
-
-                authenticatedAjax({
+                const userId = currentUser.userId || 0;
+                
+                $.ajax({
                     url: `http://localhost:5245/api/User/GetAllTasks/${userId}`,
                     type: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + getAuthToken()
+                    },
                     success: function (data) {
                         $('#taskLoadingIndicator').hide();
+                        
                         if (data && data.length > 0) {
                             data.forEach(function (task) {
-                                appendTaskToTable(task);
+                                const createdBy = task.c_created_by;
+                                const isAdminTask = createdBy !== userId;
+                                const creatorLabel = isAdminTask ? 
+                                    '<span class="badge bg-primary">Admin</span>' : 
+                                    '<span class="badge bg-secondary">Me</span>';
+                                
+                                let statusBadge = '';
+                                switch (task.c_status) {
+                                    case 'pending':
+                                        statusBadge = '<span class="badge badge-new">New</span>';
+                                        break;
+                                    case 'in_progress':
+                                        statusBadge = '<span class="badge badge-in-progress">In Progress</span>';
+                                        break;
+                                    case 'completed':
+                                        statusBadge = '<span class="badge badge-completed">Completed</span>';
+                                        break;
+                                }
+
+                                let priorityBadge = '';
+                                switch (task.c_priority) {
+                                    case 1:
+                                        priorityBadge = '<span class="badge bg-info">Low</span>';
+                                        break;
+                                    case 2:
+                                        priorityBadge = '<span class="badge bg-warning">Medium</span>';
+                                        break;
+                                    case 3:
+                                        priorityBadge = '<span class="badge bg-orange">High</span>';
+                                        break;
+                                    case 4:
+                                        priorityBadge = '<span class="badge bg-danger">Urgent</span>';
+                                        break;
+                                }
+
+                                // Only show delete button for user-created tasks
+                                const deleteButton = isAdminTask ? 
+                                    '' : // No delete button for admin tasks
+                                    `<button class="btn btn-sm btn-danger btn-action btn-delete" data-task-id="${task.c_task_id}">
+                                        <i class="fas fa-trash"></i>
+                                    </button>`;
+                                
+                                const row = `
+                                <tr>
+                                    <td>${task.c_task_id}</td>
+                                    <td>${task.c_title}</td>
+                                    <td>${task.c_description || ''}</td>
+                                    <td>${statusBadge}</td>
+                                    <td>${new Date(task.c_due_date).toLocaleDateString()}</td>
+                                    <td>${priorityBadge}</td>
+                                    <td>${creatorLabel}</td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="btn btn-sm btn-primary btn-action edit-task" data-id="${task.c_task_id}" data-admin="${isAdminTask}">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            ${deleteButton}
+                                        </div>
+                                    </td>
+                                </tr>`;
+                                
+                                $('#taskTable tbody').append(row);
                             });
+                            $('#noTasksMessage').hide();
                         } else {
                             $('#noTasksMessage').show();
                         }
                     },
-                    error: function (xhr, error) {
+                    error: function (error) {
                         $('#taskLoadingIndicator').hide();
                         $('#noTasksMessage').show();
                         console.error('Error loading tasks:', error);
                         toastr.error('Failed to load tasks.');
-                        if (xhr.status === 401) {
-                            window.location.href = '/Auth/Login';
-                        }
                     }
                 });
             }
@@ -1020,83 +1290,6 @@
                         $('#taskLoadingIndicator').hide();
                         console.error('Error fetching task:', error);
                         toastr.error('Failed to load task details.');
-                        if (xhr.status === 401) {
-                            window.location.href = '/Auth/Login';
-                        }
-                    }
-                });
-            }
-
-            function saveTask() {
-                const taskId = parseInt($('#taskId').val());
-                const isNewTask = taskId === 0;
-
-                const task = {
-                    c_task_id: taskId,
-                    c_title: $('#taskTitle').val(),
-                    c_description: $('#taskDescription').val(),
-                    c_status: parseInt($('#taskStatus').val()),
-                    c_priority: parseInt($('#taskPriority').val()),
-                    c_due_date: $('#taskDueDate').val(),
-                    c_created_by: currentUserId,
-                    c_assigned_to: currentUserId // In a real app, this might be different
-                };
-
-                if (!task.c_title) {
-                    toastr.warning('Please enter a task title.');
-                    return;
-                }
-
-                // Show loading state
-                $('#btnSaveTask').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...');
-
-                const url = isNewTask ?
-                    'http://localhost:5245/api/User/AddTask' :
-                    `http://localhost:5245/api/User/UpdateTask/${taskId}`;
-                const method = isNewTask ? 'POST' : 'PUT';
-
-                authenticatedAjax({
-                    url: url,
-                    type: method,
-                    contentType: 'application/json',
-                    data: JSON.stringify(task),
-                    success: function (response) {
-                        $('#taskModal').modal('hide');
-                        toastr.success(isNewTask ? 'Task created successfully!' : 'Task updated successfully!');
-                        loadTasks();
-                        $('#btnSaveTask').prop('disabled', false).html('<i class="fas fa-save me-2"></i>Save Task');
-                    },
-                    error: function (xhr, error) {
-                        console.error('Error saving task:', error);
-                        console.error('Status code:', xhr.status);
-                        console.error('Response text:', xhr.responseText);
-                        toastr.error('Failed to save task. Please try again.');
-                        $('#btnSaveTask').prop('disabled', false).html('<i class="fas fa-save me-2"></i>Save Task');
-
-                        if (xhr.status === 401) {
-                            window.location.href = '/Auth/Login';
-                        }
-                    }
-                });
-            }
-
-            function deleteTask(taskId) {
-                console.log(`Making DELETE request to delete task ID: ${taskId}`);
-                authenticatedAjax({
-                    url: `http://localhost:5245/api/User/${taskId}`,
-                    type: 'DELETE',
-                    success: function (response) {
-                        console.log('Task deleted successfully:', response);
-                        $('#deleteConfirmationModal').modal('hide');
-                        toastr.success('Task deleted successfully!');
-                        loadTasks();
-                    },
-                    error: function (xhr, error) {
-                        console.error(`Error deleting task ID ${taskId}:`, error);
-                        console.error('Status code:', xhr.status);
-                        console.error('Response text:', xhr.responseText);
-                        toastr.error('Failed to delete task. Please try again.');
-                        $('#deleteConfirmationModal').modal('hide');
                         if (xhr.status === 401) {
                             window.location.href = '/Auth/Login';
                         }
