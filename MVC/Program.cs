@@ -1,7 +1,19 @@
+using MVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add HttpClient
+builder.Services.AddHttpClient<ApiClientService>();
+
+// Register ApiClientService
+builder.Services.AddScoped<ApiClientService>();
+
+// Make sure HttpContextAccessor is registered (required by ApiClientService)
+builder.Services.AddHttpContextAccessor();
+
 
 var app = builder.Build();
 

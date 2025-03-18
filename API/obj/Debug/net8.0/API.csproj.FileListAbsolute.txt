@@ -1,0 +1,238 @@
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\appsettings.Development.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\appsettings.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\API.exe
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\API.deps.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\API.runtimeconfig.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\API.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\API.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Npgsql.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Repositories.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Repositories.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.sourcelink.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets.build.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets.development.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.build.API.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.API.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.API.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\scopedcss\bundle\API.styles.css
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.csproj.Up2Date
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\refint\API.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\API.genruntimeconfig.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\obj\Debug\net8.0\ref\API.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\RabbitMQ.Client.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\API\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\appsettings.Development.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\appsettings.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\API.exe
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\API.deps.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\API.runtimeconfig.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\API.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\API.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Npgsql.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\RabbitMQ.Client.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.sourcelink.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets.build.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets.development.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.build.API.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.API.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.API.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\scopedcss\bundle\API.styles.css
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.csproj.Up2Date
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\refint\API.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\API.genruntimeconfig.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\obj\Debug\net8.0\ref\API.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\api\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\appsettings.Development.json
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\appsettings.json
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\API.exe
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\API.deps.json
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\API.runtimeconfig.json
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\API.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\API.pdb
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Npgsql.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\RabbitMQ.Client.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Repositories.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Repositories.pdb
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.sourcelink.json
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets.build.json
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets.development.json
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.build.API.props
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.API.props
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.API.props
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\scopedcss\bundle\API.styles.css
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.csproj.Up2Date
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.dll
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\refint\API.dll
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.pdb
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\API.genruntimeconfig.cache
+D:\casepoint\zips\uday\API\obj\Debug\net8.0\ref\API.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\Elastic.Transport.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\ElasticSearch.Client.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\MailKit.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\MimeKit.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\casepoint\zips\uday\API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\appsettings.Development.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\appsettings.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\API.exe
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\API.deps.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\API.runtimeconfig.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\API.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\API.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Elastic.Transport.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\ElasticSearch.Client.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\MailKit.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\MimeKit.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Npgsql.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\RabbitMQ.Client.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\bin\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.sourcelink.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets.build.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets.development.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.build.API.props
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.API.props
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.API.props
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\scopedcss\bundle\API.styles.css
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.csproj.Up2Date
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\refint\API.dll
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\API.genruntimeconfig.cache
+D:\Case Point\Code Work\c#2\New Task\uday\API\obj\Debug\net8.0\ref\API.dll

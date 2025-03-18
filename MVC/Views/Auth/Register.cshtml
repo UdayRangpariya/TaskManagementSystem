@@ -1,0 +1,146 @@
+@model Repositories.Model.Register
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_Layout";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <i class="fas fa-tasks me-2"></i>
+            <h3>TaskTrackPro - Register</h3>
+        </div>
+        <div class="auth-body">
+            <form id="registerForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="FirstName">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="LastName">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="Username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="Email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="Password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                </div>
+                <div class="mb-3">
+                    <label for="profilePicture" class="form-label">Profile Picture</label>
+                    <input type="file" class="form-control" id="profilePicture" name="ProfilePictureFile" accept="image/*">
+                    <small class="text-muted">Optional. If not provided, a default picture will be used.</small>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+                <div class="mt-3 text-center">
+                    <span>Already have an account? <a asp-controller="Auth" asp-action="Login">Login</a></span>
+                </div>
+            </form>
+            <div class="alert alert-danger mt-3 d-none" id="registerError"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#registerForm').on('submit', function (e) {
+                e.preventDefault();
+
+                // Password matching validation
+                if ($('#password').val() !== $('#confirmPassword').val()) {
+                    $('#registerError').removeClass('d-none').text("Passwords don't match.");
+                    return;
+                }
+
+                // Get profile picture input element first
+                const profilePictureInput = document.getElementById('profilePicture');
+                
+                // Create FormData object to handle file upload
+                const formData = new FormData();
+                formData.append('Username', $('#username').val());
+                formData.append('Email', $('#email').val());
+                formData.append('Password', $('#password').val());
+                formData.append('FirstName', $('#firstName').val() || '');
+                formData.append('LastName', $('#lastName').val() || '');
+                
+                // Add profile picture file if selected
+                if (profilePictureInput && profilePictureInput.files && profilePictureInput.files.length > 0) {
+                    formData.append('ProfilePictureFile', profilePictureInput.files[0]);
+                }
+
+                // Show loading spinner or indicator
+                $('#registerError').addClass('d-none');
+                $('button[type="submit"]').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Registering...');
+
+                // Send request to upload controller first
+                $.ajax({
+                    url: '/Auth/UploadProfilePicture',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(uploadResponse) {
+                        // Now register the user with the uploaded profile picture path
+                        const registerData = {
+                            Username: $('#username').val(),
+                            Email: $('#email').val(),
+                            Password: $('#password').val(),
+                            FirstName: $('#firstName').val() || '',
+                            LastName: $('#lastName').val() || '',
+                            ProfilePicture: uploadResponse.profilePicturePath || 'default.png'
+                        };
+
+                        // Register user with API
+                        $.ajax({
+                            url: 'http://localhost:5245/api/Auth/register',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(registerData),
+                            success: function(response) {
+                                // Redirect to login page with success message
+                                window.location.href = '/Auth/Login?registered=true';
+                            },
+                            error: function(xhr) {
+                                // Re-enable the button
+                                $('button[type="submit"]').prop('disabled', false).html('Register');
+                                
+                                let errorMessage = 'An error occurred during registration.';
+                                if (xhr.responseJSON && xhr.responseJSON.message) {
+                                    errorMessage = xhr.responseJSON.message;
+                                } else if (xhr.responseJSON && xhr.responseJSON.errors) {
+                                    errorMessage = Object.values(xhr.responseJSON.errors).flat().join('<br>');
+                                }
+                                $('#registerError').removeClass('d-none').html(errorMessage);
+                            }
+                        });
+                    },
+                    error: function(xhr) {
+                        // Re-enable the button
+                        $('button[type="submit"]').prop('disabled', false).html('Register');
+                        
+                        let errorMessage = 'Failed to upload profile picture.';
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMessage = xhr.responseJSON.message;
+                        }
+                        $('#registerError').removeClass('d-none').text(errorMessage);
+                    }
+                });
+            });
+        });
+    </script>
+}

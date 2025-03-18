@@ -1,0 +1,144 @@
+@model Repositories.Model.Login
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout"; 
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <i class="fas fa-tasks me-2"></i>
+            <h3>TaskTrackPro</h3>
+        </div>
+        <div class="auth-body">
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="Username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="Password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userRole" class="form-label">Login As</label>
+                    <select class="form-select" id="userRole">
+                        <option value="user" selected>User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+                <div class="mt-3 text-center">
+                    <span>Don't have an account? <a asp-controller="Auth" asp-action="Register">Register</a></span>
+                </div>
+            </form>
+            <div class="alert alert-danger mt-3 d-none" id="loginError"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Include the selected role from dropdown in the request
+                const loginData = {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                    role: $('#userRole').val()
+                };
+                
+                console.log('Sending login data:', loginData);
+                
+                $.ajax({
+                    url: 'http://localhost:5245/api/Auth/login',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(loginData),
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function(response) {
+                        console.log('Login response:', response);
+                        
+                        // Store token in localStorage
+                        localStorage.setItem('jwtToken', response.token);
+                        
+                        // Make sure we have valid user data before storing
+                        const userData = {
+                            userId: response.user?.userId || 0,
+                            username: response.user?.username || '',
+                            role: response.user?.role || '',
+                            firstName: response.user?.firstName || '',
+                            lastName: response.user?.lastName || ''
+                        };
+                        
+                        localStorage.setItem('currentUser', JSON.stringify(userData));
+                        
+                        // Get the selected role from dropdown
+                        const selectedRole = $('#userRole').val();
+                        
+                        // Debug the roles to see what's coming from the server
+                        console.log('Selected role:', selectedRole);
+                        console.log('User role from API:', userData.role);
+                        
+                        // Convert role to lowercase string for safe comparison
+                        const userRoleStr = (userData.role || '').toString().toLowerCase();
+                        const isAdmin = userRoleStr.includes('admin');
+                        
+                        // Handle role-based access
+                        if (selectedRole === 'admin') {
+                            window.location.href = '/Admin/Index';
+                        } else {
+                            // Regular user access
+                            window.location.href = '/User/Index';
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Login error:', xhr.status, xhr.responseText);
+                        
+                        let errorMessage = 'An error occurred during login.';
+                        
+                        try {
+                            if (xhr.responseJSON) {
+                                // Handle structured error responses
+                                if (xhr.responseJSON.errors) {
+                                    const errors = xhr.responseJSON.errors;
+                                    errorMessage = Object.keys(errors)
+                                        .map(key => `${key}: ${errors[key].join(', ')}`)
+                                        .join('; ');
+                                } else if (xhr.responseJSON.message) {
+                                    errorMessage = xhr.responseJSON.message;
+                                }
+                            } else if (xhr.responseText) {
+                                // Try to parse the response as JSON
+                                try {
+                                    const response = JSON.parse(xhr.responseText);
+                                    if (response.errors) {
+                                        const errors = response.errors;
+                                        errorMessage = Object.keys(errors)
+                                            .map(key => `${key}: ${errors[key].join(', ')}`)
+                                            .join('; ');
+                                    } else if (response.message) {
+                                        errorMessage = response.message;
+                                    }
+                                } catch (e) {
+                                    // If not JSON, use as plain text
+                                    errorMessage = xhr.responseText;
+                                }
+                            }
+                        } catch (e) {
+                            console.error('Error parsing response:', e);
+                        }
+                        
+                        $('#loginError').removeClass('d-none').text(errorMessage);
+                    }
+                });
+            });
+        });
+    </script>
+}

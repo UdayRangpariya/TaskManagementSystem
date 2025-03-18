@@ -1,36 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\MVC.csproj": {}
+    "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\MVC\\MVC.csproj": {}
   },
   "projects": {
-    "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\MVC.csproj": {
+    "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\MVC\\MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\MVC.csproj",
+        "projectUniqueName": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\MVC\\MVC.csproj",
         "projectName": "MVC",
-        "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\MVC.csproj",
-        "packagesPath": "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\",
-        "outputPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\MVC\\obj\\",
+        "projectPath": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\MVC\\MVC.csproj",
+        "packagesPath": "C:\\Users\\udayr\\.nuget\\packages\\",
+        "outputPath": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Saiyed Vasim Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\udayr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
-                "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj"
+              "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\Repositories\\Repositories.csproj": {
+                "projectPath": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -49,6 +46,24 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -68,29 +83,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj": {
+    "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\Repositories.csproj",
-        "packagesPath": "C:\\Users\\Saiyed Vasim Ali\\.nuget\\packages\\",
-        "outputPath": "D:\\casepoint\\Group_Project\\Task_Management\\TaskManagementSystem\\Repositories\\obj\\",
+        "projectPath": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\udayr\\.nuget\\packages\\",
+        "outputPath": "D:\\Case Point\\Code Work\\c#2\\New Task\\uday\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Saiyed Vasim Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\udayr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -139,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

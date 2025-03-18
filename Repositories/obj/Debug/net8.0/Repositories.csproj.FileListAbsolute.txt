@@ -1,0 +1,52 @@
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\casepoint\zips\uday\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\casepoint\zips\uday\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\casepoint\zips\uday\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\casepoint\zips\uday\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\Repositories\obj\Debug\net8.0\ref\Repositories.dll

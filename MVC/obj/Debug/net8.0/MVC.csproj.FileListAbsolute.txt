@@ -1,0 +1,200 @@
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\appsettings.Development.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\appsettings.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.staticwebassets.runtime.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.exe
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.deps.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.runtimeconfig.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Npgsql.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Repositories.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Repositories.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.csproj.AssemblyReference.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.GeneratedMSBuildEditorConfig.editorconfig
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.AssemblyInfoInputs.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.AssemblyInfo.cs
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.csproj.CoreCompileInputs.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.MvcApplicationPartsAssemblyInfo.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cs
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.sourcelink.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets.build.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets.development.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.MVC.Microsoft.AspNetCore.StaticWebAssets.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC.props
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets.pack.json
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\scopedcss\bundle\MVC.styles.css
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\scopedcss\projectbundle\MVC.bundle.scp.css
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.csproj.Up2Date
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\refint\MVC.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.pdb
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.genruntimeconfig.cache
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\obj\Debug\net8.0\ref\MVC.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\casepoint\Group_Project\Task_Management\TaskManagementSystem\MVC\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\appsettings.Development.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\appsettings.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.staticwebassets.runtime.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.exe
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.deps.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.runtimeconfig.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\MVC.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Npgsql.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\bin\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.csproj.AssemblyReference.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.AssemblyInfoInputs.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.AssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.csproj.CoreCompileInputs.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.MvcApplicationPartsAssemblyInfo.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.sourcelink.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets.build.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets.development.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.MVC.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC.props
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\scopedcss\bundle\MVC.styles.css
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\scopedcss\projectbundle\MVC.bundle.scp.css
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.csproj.Up2Date
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\refint\MVC.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.pdb
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\MVC.genruntimeconfig.cache
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\MVC\obj\Debug\net8.0\ref\MVC.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Case Point\Code Work\c#2\New\TaskManagementSystem\mvc\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\appsettings.Development.json
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\appsettings.json
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\MVC.staticwebassets.runtime.json
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\MVC.exe
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\MVC.deps.json
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\MVC.runtimeconfig.json
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\MVC.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\MVC.pdb
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Npgsql.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Repositories.dll
+D:\casepoint\zips\uday\MVC\bin\Debug\net8.0\Repositories.pdb
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.csproj.AssemblyReference.cache
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.GeneratedMSBuildEditorConfig.editorconfig
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.AssemblyInfoInputs.cache
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.AssemblyInfo.cs
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.csproj.CoreCompileInputs.cache
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.MvcApplicationPartsAssemblyInfo.cache
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cache
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cs
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.sourcelink.json
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets.build.json
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets.development.json
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.MVC.Microsoft.AspNetCore.StaticWebAssets.props
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC.props
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC.props
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC.props
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\staticwebassets.pack.json
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\scopedcss\bundle\MVC.styles.css
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\scopedcss\projectbundle\MVC.bundle.scp.css
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.csproj.Up2Date
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.dll
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\refint\MVC.dll
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.pdb
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\MVC.genruntimeconfig.cache
+D:\casepoint\zips\uday\MVC\obj\Debug\net8.0\ref\MVC.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\refint\MVC.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\appsettings.Development.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\appsettings.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\MVC.staticwebassets.runtime.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\MVC.exe
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\MVC.deps.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\MVC.runtimeconfig.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\MVC.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\MVC.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Npgsql.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Repositories.dll
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\bin\Debug\net8.0\Repositories.pdb
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.csproj.AssemblyReference.cache
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.AssemblyInfoInputs.cache
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.AssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.csproj.CoreCompileInputs.cache
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.MvcApplicationPartsAssemblyInfo.cache
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cache
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.RazorAssemblyInfo.cs
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.sourcelink.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets.build.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets.development.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.MVC.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC.props
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC.props
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC.props
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\scopedcss\bundle\MVC.styles.css
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\scopedcss\projectbundle\MVC.bundle.scp.css
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.csproj.Up2Date
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\MVC.genruntimeconfig.cache
+D:\Case Point\Code Work\c#2\New Task\uday\MVC\obj\Debug\net8.0\ref\MVC.dll

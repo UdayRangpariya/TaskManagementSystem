@@ -1,0 +1,1271 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+@model Repositories.Model.AdminModels.TaskModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrackPro - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --primary-hover: #2d62aa;
+            --secondary-color: #2c3e50;
+            --light-bg: #f8f9fa;
+            --danger-color: #e74c3c;
+            --warning-color: #f39c12;
+            --success-color: #2ecc71;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--secondary-color);
+            min-height: 100vh;
+            color: white;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 16px;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .sidebar .nav-link {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            margin: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(4px);
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            padding: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 24px;
+            min-height: 100vh;
+            transition: all 0.3s;
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+            margin-bottom: 24px;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-action {
+            padding: 6px 12px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .btn-view-task {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-view-task:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Task Items */
+        .task-item {
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin-bottom: 16px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+        }
+
+        .task-item:hover {
+            transform: translateX(4px);
+        }
+
+        .priority-high {
+            border-left-color: var(--danger-color);
+        }
+
+        .priority-medium {
+            border-left-color: var(--warning-color);
+        }
+
+        .priority-low {
+            border-left-color: var(--success-color);
+        }
+
+        /* Loader */
+        .loader {
+            display: flex;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+
+
+        /* Notifications */
+        .notification-bell {
+            position: relative;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .notification-bell:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            font-size: 12px;
+            padding: 2px 6px;
+            background-color: var(--danger-color);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .notification-dropdown {
+            width: 320px;
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            border: none;
+        }
+
+        .notification-header {
+            padding: 12px 16px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .notification-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s;
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-item.unread {
+            background-color: rgba(58, 123, 213, 0.1);
+        }
+
+        .notification-item:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* Table */
+        .table thead th {
+            background-color: rgba(0, 0, 0, 0.02);
+            padding: 12px 16px;
+            font-weight: 600;
+        }
+
+        .table tbody td {
+            padding: 12px 16px;
+            vertical-align: middle;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background-color: rgba(46, 204, 113, 0.15);
+            color: var(--success-color);
+        }
+
+        .status-inactive {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: var(--danger-color);
+        }
+
+        /* Responsive Adjustments */
+
+        .main-content {
+            margin-left: 0;
+            padding: 16px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="logo-container">
+                    <h5 class="mb-0"><i class="fas fa-tasks me-2"></i> TaskTrackPro</h5>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#" id="dashboardLink"><i
+                                class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="usersNavLink"><i class="fas fa-users"></i>
+                            Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="tasksNavLink"><i
+                                class="fas fa-clipboard-list"></i> Tasks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="analyticsLink"><i
+                                class="fas fa-chart-bar"></i> Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="settingsLink"><i class="fas fa-cog"></i>
+                            Settings</a></li>
+                    <li class="nav-item mt-4"><a class="nav-link text-danger" href="#" id="logoutBtn"><i
+                                class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0">Admin Dashboard</h2>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="dropdown">
+                            <div class="notification-bell" id="notificationBell">
+                                <i class="fas fa-bell"></i>
+                                <span class="notification-count" id="unreadCount">0</span>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-end notification-dropdown"
+                                id="notificationDropdown">
+                                <div class="notification-header d-flex justify-content-between align-items-center">
+                                    <span>Notifications</span>
+                                    <a href="#" class="text-primary small" id="markAllRead">Mark all as read</a>
+                                </div>
+                                <div id="notificationList"></div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="d-flex align-items-center cursor-pointer" id="userProfileDropdown"
+                                data-bs-toggle="dropdown">
+                                <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                                    style="width: 40px; height: 40px;">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Admin</div>
+                                </div>
+                                <i class="fas fa-chevron-down ms-2 text-muted small"></i>
+                            </div>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i> My
+                                        Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Account
+                                        Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-danger" href="#" id="logoutBtnDropdown"><i
+                                            class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Content -->
+                <div class="content-section" id="dashboardContent">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted mb-1">Total Users</h6>
+                                        <h3 class="mb-0" id="totalUsersCount">0</h3>
+                                    </div>
+                                    <div class="rounded-circle bg-primary bg-opacity-10 p-3">
+                                        <i class="fas fa-users text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted mb-1">Active Tasks</h6>
+                                        <h3 class="mb-0" id="activeTasks">0</h3>
+                                    </div>
+                                    <div class="rounded-circle bg-warning bg-opacity-10 p-3">
+                                        <i class="fas fa-clipboard-list text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted mb-1">Completed Tasks</h6>
+                                        <h3 class="mb-0" id="completedTasks">0</h3>
+                                    </div>
+                                    <div class="rounded-circle bg-success bg-opacity-10 p-3">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted mb-1">High Priority</h6>
+                                        <h3 class="mb-0" id="highPriorityTasks">0</h3>
+                                    </div>
+                                    <div class="rounded-circle bg-danger bg-opacity-10 p-3">
+                                        <i class="fas fa-exclamation-circle text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Management -->
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">User Management</h5>
+                            <button class="btn btn-primary btn-sm" id="addUserBtn"><i class="fas fa-plus me-1"></i> Add
+                                User</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Tasks</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usersTableBody"></tbody>
+                                </table>
+                                <div class="loader" id="usersLoader">
+                                    <div class="spinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Sections (Hidden) -->
+                <div class="content-section d-none" id="analyticsContent">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Task Analytics</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Analytics content will be displayed here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section d-none" id="settingsContent">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">System Settings</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Settings panel will be displayed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div class="modal fade" id="tasksModal" tabindex="-1" aria-labelledby="tasksModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="tasksModalLabel"><i class="fas fa-tasks me-2"></i> Tasks for <span
+                            id="modalUserName"></span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="loader" id="tasksLoader">
+                        <div class="spinner"></div>
+                    </div>
+                    <div id="tasksContainer"></div>
+                    <div class="mt-4">
+                        <h6 class="border-bottom pb-2 mb-3">Add New Task</h6>
+                        <form id="addTaskForm">
+                            <div class="mb-3">
+                                <label for="taskTitle" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="taskTitle" placeholder="Enter task title"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="taskDescription" class="form-label">Description</label>
+                                <textarea class="form-control" id="taskDescription" rows="3"
+                                    placeholder="Enter task description" required></textarea>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="taskStatus" class="form-label">Status</label>
+                                    <select class="form-select" id="taskStatus">
+                                        <option value="0">Pending</option>
+                                        <option value="1">In Progress</option>
+                                        <option value="2">Completed</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="taskPriority" class="form-label">Priority</label>
+                                    <select class="form-select" id="taskPriority">
+                                        <option value="1">Low</option>
+                                        <option value="2">Medium</option>
+                                        <option value="3">High</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="taskDueDate" class="form-label">Due Date</label>
+                                    <input type="date" class="form-control" id="taskDueDate" required>
+                                </div>
+                            </div>
+                            <div class="text-end mt-3">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-plus me-1"></i> Add
+                                    Task</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="addUserModalLabel"><i class="fas fa-user-plus me-2"></i> Add New User
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addUserForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role">
+                                <option value="1">User</option>
+                                <option value="0">Admin</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="isActive" checked>
+                                <label class="form-check-label" for="isActive">Active</label>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Add User</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Constants
+        @* const ADMIN_ID = 1; // Adjust based on actual admin ID from auth
+        const USER_ID = "2"; // Hardcoded for testing; replace with auth in production *@
+        let taskStats = { active: 0, completed: 0, highPriority: 0 };
+             const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+            const currentUserId = currentUser.userId || 0;
+           const token = getAuthToken();
+
+        // SignalR Connection
+        @* const connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5245/notificationHub")
+            .configureLogging(signalR.LogLevel.Information)
+            .build(); *@
+              const connection = new signalR.HubConnectionBuilder()
+                .withUrl("http://localhost:5245/notificationHub", {
+                    accessTokenFactory: () => getAuthToken(),
+                    transport: signalR.HttpTransportType.WebSockets // Try WebSockets first
+                })
+                .configureLogging(signalR.LogLevel.Debug) // Detailed logs
+                .withAutomaticReconnect() // Handle disconnects
+                .build();
+
+
+        @* connection.start()
+            .then(() => connection.invoke("JoinUserGroup", USER_ID).catch(err => console.error(err)))
+            .catch(err => console.error("SignalR Connection Error:", err)); *@
+                  connection.start()
+                .then(() => {
+                    console.log("SignalR Connected!");
+                    return connection.invoke("JoinUserGroup"); // No userId parameter
+                })
+                .catch(err => console.error("SignalR Connection Error:", err));
+      
+            connection.onclose((error) => {
+            console.error("SignalR Connection Closed:", error);
+        });
+
+
+        // Debounce utility
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        // Notification Functions
+        @* function loadNotifications() {
+            $.ajax({
+                url: 'http://localhost:5245/api/AdminApi/my-notifications',
+                method: 'GET',
+                success: function (response) {
+                    const notifications = response.notifications || [];
+                    $('#notificationList').empty();
+
+                    if (notifications.length > 0) {
+                        let unreadCount = 0;
+                        notifications.forEach(notification => {
+                            if (!notification.c_is_read) unreadCount++;
+                            appendNotificationToDropdown(notification);
+                        });
+                        $('#unreadCount').text(unreadCount).toggle(unreadCount > 0);
+                    } else {
+                        $('#notificationList').html('<div class="p-3 text-center text-muted">No notifications</div>');
+                        $('#unreadCount').hide();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching notifications:', error);
+                    $('#notificationList').html('<div class="p-3 text-center text-danger">Failed to load notifications</div>');
+                }
+            });
+        } *@
+                 function loadNotifications() {
+                authenticatedAjax({
+                    url: 'http://localhost:5245/api/User/my-notifications', // Updated API path
+                    method: 'GET',
+                    success: function (response) {
+                        const notifications = response.notifications || [];
+                        $('#notificationList').empty();
+
+                        if (notifications.length > 0) {
+                            let unreadCount = 0;
+                            notifications.forEach(notification => {
+                                if (!notification.c_is_read) unreadCount++;
+                                appendNotificationToDropdown(notification);
+                            });
+                            $('#unreadCount').text(unreadCount).toggle(unreadCount > 0);
+                        } else {
+                            $('#notificationList').html('<div class="p-3 text-center text-muted">No notifications</div>');
+                            $('#unreadCount').hide();
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching notifications:', error);
+                        $('#notificationList').html('<div class="p-3 text-center text-danger">Failed to load notifications</div>');
+
+                        // If unauthorized, redirect to login
+                        if (xhr.status === 401) {
+                            window.location.href = '/Auth/Login';
+                        }
+                    }
+                });
+            }
+
+        const debouncedLoadNotifications = debounce(loadNotifications, 1000);
+
+        function appendNotificationToDropdown(notification) {
+            const date = new Date(notification.c_created_at).toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+            const unreadClass = notification.c_is_read ? '' : 'unread';
+            const boldClass = notification.c_is_read ? '' : 'fw-bold';
+
+            const item = `
+                <div class="notification-item ${unreadClass}" data-notification-id="${notification.c_notification_id}">
+                    <div class="notification-message ${boldClass}">${notification.c_message}</div>
+                    <div class="notification-time">${date}</div>
+                    ${!notification.c_is_read ? `
+                        <button class="btn btn-sm btn-outline-primary mark-as-read" data-notification-id="${notification.c_notification_id}">
+                            Mark as Read
+                        </button>
+                    ` : ''}
+                </div>
+            `;
+            $('#notificationList').append(item);
+        }
+
+        function toggleNotificationDropdown() {
+            $('#notificationDropdown').toggleClass('show');
+        }
+
+        // SignalR Handlers
+        connection.on("ReceiveNotification", (data) => {
+            const notifications = data.notifications || [];
+            $('#notificationList').empty();
+
+            if (notifications.length > 0) {
+                let unreadCount = 0;
+                notifications.forEach(notification => {
+                    if (!notification.c_is_read) unreadCount++;
+                    appendNotificationToDropdown(notification);
+                });
+                $("#unreadCount").text(data.count).toggle(data.count > 0);
+            } else {
+                $('#notificationList').html('<div class="p-3 text-center text-muted">No notifications</div>');
+                $("#unreadCount").hide();
+            }
+        });
+
+        @* connection.on("NotificationMarkedAsRead", (data) => {
+            $(`[data-notification-id="${data.notificationId}"]`).removeClass("unread").remove();
+            $("#unreadCount").text(data.unreadCount).toggle(data.unreadCount > 0);
+            if ($("#notificationList").children().length === 0) {
+                $("#notificationList").html('<div class="p-3 text-center text-muted">No notifications</div>');
+            }
+        }); *@
+           connection.on("NotificationMarkedAsRead", (notificationId) => {
+            const $item = $(`[data-notification-id="${notificationId}"]`);
+            $item.removeClass("unread").find(".notification-message").removeClass("fw-bold");
+            $item.find(".mark-as-read").remove();
+            const unreadCount = $('.notification-item.unread').length;
+            $("#unreadCount").text(unreadCount).toggle(unreadCount > 0);
+            if ($("#notificationList").children().length === 0) {
+                $("#notificationList").html('<div class="p-3 text-center text-muted">No notifications</div>');
+            }
+        });
+
+        connection.on("AllNotificationsMarkedAsRead", (data) => {
+            $("#notificationList").empty().html('<div class="p-3 text-center text-muted">No notifications</div>');
+            $("#unreadCount").text(0).hide();
+        });
+
+        // Initialize Notifications
+        function initializeNotifications() {
+            $('#notificationBell').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleNotificationDropdown();
+                debouncedLoadNotifications();
+            });
+
+            @* $(document).on('click', function (e) {
+                if (!$(e.target).closest('#notificationDropdown, #notificationBell').length) {
+                    $('#notificationDropdown').removeClass('show');
+                }
+            }); *@
+                 $(document).on('click', function (e) {
+                if (!$(e.target).closest('#notificationDropdown, #notificationBell').length) {
+                    $('#notificationDropdown').removeClass('show');
+                }
+            });
+
+            @* $('#markAllRead').click(function (e) {
+                e.preventDefault();
+                connection.invoke("MarkAllNotificationsAsRead", USER_ID).catch(err => console.error(err));
+            }); *@
+                  $('#markAllRead').click(function (e) {
+                e.preventDefault();
+                connection.invoke("MarkAllNotificationsAsRead")
+                    .catch(err => console.error("Error marking all notifications:", err));
+            });
+                
+@* 
+            $(document).on('click', '.mark-as-read', function () {
+                console.log("mak as read clicked");
+                const notificationId = $(this).data('notification-id');
+                console.log(`here is the notificationid ${notificationId}`)
+                connection.invoke("MarkNotificationAsRead", USER_ID, notificationId).catch(err => console.error(err));
+            }); *@
+                   $(document).on('click', '.mark-as-read', function () {
+                const notificationId = parseInt($(this).data('notification-id'));
+                connection.invoke("MarkNotificationAsRead", notificationId)
+                    .catch(err => console.error("Error marking notification:", err));
+            });
+
+            debouncedLoadNotifications(); // Initial load
+            setInterval(debouncedLoadNotifications, 30000); // Every 30 seconds
+        }
+
+        // User Management
+        function loadUsers() {
+            $('#usersLoader').show();
+            $('#usersTableBody').empty();
+
+            $.ajax({
+                url: 'http://localhost:5245/api/AdminApi/users',
+                method: 'GET',
+                success: function (users) {
+                    $('#usersLoader').hide();
+                    let userCount = 0;
+
+                    if (users && users.length > 0) {
+                        users.forEach(user => {
+                            if (user.c_user_id !== ADMIN_ID) {
+                                appendUserToTable(user);
+                                userCount++;
+                            }
+                        });
+                        $('#totalUsersCount').text(userCount);
+                    } else {
+                        $('#usersTableBody').html('<tr><td colspan="7" class="text-center">No users found</td></tr>');
+                        $('#totalUsersCount').text('0');
+                    }
+                    loadTaskStats();
+                },
+                error: function (xhr, status, error) {
+                    $('#usersLoader').hide();
+                    $('#usersTableBody').html(`<tr><td colspan="7" class="text-center text-danger">Error: ${error}</td></tr>`);
+                }
+            });
+        }
+
+        function appendUserToTable(user) {
+            const fullName = `${user.c_first_name} ${user.c_last_name}`;
+            const statusClass = user.c_is_active ? 'status-active' : 'status-inactive';
+            const statusText = user.c_is_active ? 'Active' : 'Inactive';
+
+            const row = `
+                <tr>
+                    <td>${user.c_user_id}</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar bg-light text-secondary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 36px; height: 36px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>${fullName}</div>
+                        </td>
+                    <td>${user.c_email}</td>
+                    <td>${user.c_role === 0 ? 'Admin' : 'User'}</td>
+                    <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                    <td>
+                        <button class="btn btn-view-task btn-sm" data-user-id="${user.c_user_id}" data-user-name="${fullName}">
+                            <i class="fas fa-tasks me-1"></i> View Tasks
+                        </button>
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item edit-user" href="#" data-user-id="${user.c_user_id}"><i class="fas fa-edit me-2"></i> Edit</a></li>
+                                <li><a class="dropdown-item ${user.c_is_active ? 'deactivate-user' : 'activate-user'}" href="#" data-user-id="${user.c_user_id}">
+                                    <i class="fas ${user.c_is_active ? 'fa-user-slash' : 'fa-user-check'} me-2"></i>
+                                    ${user.c_is_active ? 'Deactivate' : 'Activate'}
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger delete-user" href="#" data-user-id="${user.c_user_id}">
+                                    <i class="fas fa-trash-alt me-2"></i> Delete
+                                </a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            $('#usersTableBody').append(row);
+        }
+
+        // Task Statistics
+        function loadTaskStats() {
+            $.ajax({
+                url: 'http://localhost:5245/api/AdminApi/task-stats',
+                method: 'GET',
+                success: function (stats) {
+                    if (!stats) {
+                        $.ajax({
+                            url: 'http://localhost:5245/api/AdminApi',
+                            method: 'GET',
+                            success: function (tasks) {
+                                let activeTasks = 0, completedTasks = 0, highPriorityTasks = 0;
+                                if (tasks && tasks.length > 0) {
+                                    tasks.forEach(task => {
+                                        if (task.c_status === 2) completedTasks++;
+                                        else activeTasks++;
+                                        if (task.c_priority === 3) highPriorityTasks++;
+                                    });
+                                }
+                                updateTaskStats(activeTasks, completedTasks, highPriorityTasks);
+                            },
+                            error: () => updateTaskStats(0, 0, 0)
+                        });
+                    } else {
+                        updateTaskStats(stats.active, stats.completed, stats.highPriority);
+                    }
+                },
+                error: () => updateTaskStats(0, 0, 0)
+            });
+        }
+
+        function updateTaskStats(active, completed, highPriority) {
+            $('#activeTasks').text(active);
+            $('#completedTasks').text(completed);
+            $('#highPriorityTasks').text(highPriority);
+            taskStats = { active, completed, highPriority };
+        }
+
+        // Navigation Handling
+        $('.sidebar .nav-link').click(function (e) {
+            e.preventDefault();
+            $('.sidebar .nav-link').removeClass('active');
+            $(this).addClass('active');
+            $('.content-section').addClass('d-none');
+
+            const targetId = $(this).attr('id');
+            if (targetId === 'dashboardLink' || targetId === 'usersNavLink' || targetId === 'tasksNavLink') {
+                $('#dashboardContent').removeClass('d-none');
+                if (targetId === 'usersNavLink') loadUsers();
+            } else if (targetId === 'analyticsLink') {
+                $('#analyticsContent').removeClass('d-none');
+            } else if (targetId === 'settingsLink') {
+                $('#settingsContent').removeClass('d-none');
+            }
+        });
+
+        // Task Management
+        $(document).on('click', '.btn-view-task', function () {
+            const userId = $(this).data('user-id');
+            const userName = $(this).data('user-name');
+            openTasksModal(userId, userName);
+        });
+
+        function openTasksModal(userId, userName) {
+            $('#modalUserName').text(userName);
+            $('#tasksContainer').empty();
+            $('#tasksLoader').show();
+
+            const today = new Date().toISOString().split('T')[0];
+            $('#taskDueDate').val(today);
+
+            const tasksModal = new bootstrap.Modal(document.getElementById('tasksModal'));
+            tasksModal.show();
+
+            $.ajax({
+                url: `http://localhost:5245/api/AdminApi?createdBy=${ADMIN_ID}&assignedTo=${userId}`,
+                method: 'GET',
+                success: function (tasks) {
+                    $('#tasksLoader').hide();
+                    if (tasks && tasks.length > 0) {
+                        tasks.forEach(task => appendTaskToModal(task));
+                    } else {
+                        $('#tasksContainer').html('<div class="alert alert-info">No tasks assigned to this user yet.</div>');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $('#tasksLoader').hide();
+                    $('#tasksContainer').html(`<div class="alert alert-danger">Error: ${error}</div>`);
+                }
+            });
+
+            $('#addTaskForm')[0].reset();
+            $('#addTaskForm').off('submit').on('submit', function (e) {
+                e.preventDefault();
+                const taskData = {
+                    c_title: $('#taskTitle').val(),
+                    c_description: $('#taskDescription').val(),
+                    c_status: parseInt($('#taskStatus').val()),
+                    c_priority: parseInt($('#taskPriority').val()),
+                    c_due_date: new Date($('#taskDueDate').val()).toISOString(),
+                    c_created_at: new Date().toISOString(),
+                    c_updated_at: new Date().toISOString(),
+                    c_created_by: ADMIN_ID,
+                    c_assigned_to: userId
+                };
+
+                $.ajax({
+                    url: 'http://localhost:5245/api/AdminApi/Addtasks',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(taskData),
+                    success: function () {
+                        $('#addTaskForm')[0].reset();
+                        $('#taskDueDate').val(today);
+                        showToast('Success', 'Task added successfully', 'success');
+                        openTasksModal(userId, userName);
+                        loadTaskStats();
+                    },
+                    error: function (xhr, status, error) {
+                        showToast('Error', `Failed to add task: ${error}`, 'danger');
+                    }
+                });
+            });
+        }
+
+        function appendTaskToModal(task) {
+            const priorityClass = task.c_priority === 3 ? 'priority-high' : task.c_priority === 2 ? 'priority-medium' : 'priority-low';
+            const priorityText = task.c_priority === 3 ? 'High' : task.c_priority === 2 ? 'Medium' : 'Low';
+            const statusText = task.c_status === 0 ? 'Pending' : task.c_status === 1 ? 'In Progress' : 'Completed';
+            const statusClass = task.c_status === 0 ? 'bg-warning' : task.c_status === 1 ? 'bg-primary' : 'bg-success';
+            const dueDate = new Date(task.c_due_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const isPastDue = new Date(task.c_due_date) < new Date() && task.c_status !== 2;
+            const dueDateClass = isPastDue ? 'text-danger' : '';
+
+            const taskItem = `
+                <div class="task-item ${priorityClass}" data-task-id="${task.c_task_id}">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="mb-0">${task.c_title}</h5>
+                        <div>
+                            <span class="badge ${statusClass} me-1">${statusText}</span>
+                            <span class="badge bg-secondary">${priorityText}</span>
+                        </div>
+                    </div>
+                    <p class="mb-2">${task.c_description}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted ${dueDateClass}">
+                            <i class="far fa-calendar-alt me-1"></i> Due: ${dueDate}
+                            ${isPastDue ? ' <span class="badge bg-danger">Overdue</span>' : ''}
+                        </small>
+                        <div class="task-actions">
+                            <button class="btn btn-sm btn-outline-primary edit-task" data-task-id="${task.c_task_id}"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-outline-danger delete-task" data-task-id="${task.c_task_id}"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            const $taskElement = $(taskItem);
+            $taskElement.data('task', task);
+            $('#tasksContainer').append($taskElement);
+        }
+
+        $(document).on('click', '.edit-task', function () {
+            const taskId = $(this).data('task-id');
+            const taskElement = $(this).closest('.task-item');
+            const task = taskElement.data('task');
+            const dueDateISO = new Date(task.c_due_date).toISOString().split('T')[0];
+
+            taskElement.html(`
+                <form class="edit-task-form">
+                    <div class="mb-2">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control" value="${task.c_title}" name="title" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" name="description" rows="2" required>${task.c_description}</textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-2">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" name="status">
+                                <option value="0" ${task.c_status === 0 ? 'selected' : ''}>Pending</option>
+                                <option value="1" ${task.c_status === 1 ? 'selected' : ''}>In Progress</option>
+                                <option value="2" ${task.c_status === 2 ? 'selected' : ''}>Completed</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <label class="form-label">Priority</label>
+                            <select class="form-select" name="priority">
+                                <option value="1" ${task.c_priority === 1 ? 'selected' : ''}>Low</option>
+                                <option value="2" ${task.c_priority === 2 ? 'selected' : ''}>Medium</option>
+                                <option value="3" ${task.c_priority === 3 ? 'selected' : ''}>High</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <label class="form-label">Due Date</label>
+                            <input type="date" class="form-control" value="${dueDateISO}" name="dueDate" required>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-sm btn-outline-secondary cancel-edit">Cancel</button>
+                        <button type="submit" class="btn btn-sm btn-primary ms-2"><i class="fas fa-save me-1"></i> Save</button>
+                    </div>
+                </form>
+            `);
+
+            taskElement.find('.edit-task-form').on('submit', function (e) {
+                e.preventDefault();
+                const updatedTask = {
+                    c_task_id: taskId,
+                    c_title: $(this).find('[name="title"]').val(),
+                    c_description: $(this).find('[name="description"]').val(),
+                    c_status: parseInt($(this).find('[name="status"]').val()),
+                    c_priority: parseInt($(this).find('[name="priority"]').val()),
+                    c_due_date: new Date($(this).find('[name="dueDate"]').val()).toISOString(),
+                    c_created_at: task.c_created_at,
+                    c_updated_at: new Date().toISOString(),
+                    c_created_by: task.c_created_by,
+                    c_assigned_to: task.c_assigned_to
+                };
+
+                $.ajax({
+                    url: `http://localhost:5245/api/AdminApi/${taskId}`,
+                    method: 'PUT',
+                    contentType: 'application/json',
+                    data: JSON.stringify(updatedTask),
+                    success: function () {
+                        showToast('Success', 'Task updated successfully', 'success');
+                        openTasksModal(updatedTask.c_assigned_to, $('#modalUserName').text());
+                        loadTaskStats();
+                    },
+                    error: function (xhr, status, error) {
+                        showToast('Error', `Failed to update task: ${error}`, 'danger');
+                    }
+                });
+            });
+
+            taskElement.find('.cancel-edit').on('click', () => appendTaskToModal(task));
+        });
+
+        $(document).on('click', '.delete-task', function () {
+             const taskId = $(this).data('task-id');
+            console.log(`task id from the delted section ${taskId}`);
+            const taskElement = $(this).closest('.task-item');
+            const task = taskElement.data('task');
+            console.log(taskId);
+
+            if (confirm('Are you sure you want to delete this task?')) {
+                $.ajax({
+                    url: `http://localhost:5245/api/AdminApi/${taskId}`,
+                    method: 'DELETE',
+                    success: function () {
+                        taskElement.remove();
+                        showToast('Success', 'Task deleted successfully', 'success');
+                        if ($('#tasksContainer').children().length === 0) {
+                            $('#tasksContainer').html('<div class="alert alert-info">No tasks assigned to this user yet.</div>');
+                        }
+                        loadTaskStats();
+                    },
+                    error: function (xhr, status, error) {
+                        showToast('Error', `Failed to delete task: ${error}`, 'danger');
+                    }
+                });
+            }
+        });
+
+        // User Actions
+        $(document).on('click', '#addUserBtn', function () {
+            const addUserModal = new bootstrap.Modal(document.getElementById('addUserModal'));
+            addUserModal.show();
+
+            $('#addUserForm')[0].reset();
+            $('#isActive').prop('checked', true);
+
+            $('#addUserForm').off('submit').on('submit', function (e) {
+                e.preventDefault();
+                const userData = {
+                    c_first_name: $('#firstName').val(),
+                    c_last_name: $('#lastName').val(),
+                    c_email: $('#email').val(),
+                    c_password: $('#password').val(), // Hash server-side in production
+                    c_role: parseInt($('#role').val()),
+                    c_is_active: $('#isActive').is(':checked')
+                };
+
+                $.ajax({
+                    url: 'http://localhost:5245/api/AdminApi/add-user',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(userData),
+                    success: function () {
+                        addUserModal.hide();
+                        showToast('Success', 'User added successfully', 'success');
+                        loadUsers();
+                    },
+                    error: function (xhr, status, error) {
+                        showToast('Error', `Failed to add user: ${error}`, 'danger');
+                    }
+                });
+            });
+        });
+
+        $(document).on('click', '.edit-user', function (e) {
+            e.preventDefault();
+            const userId = $(this).data('user-id');
+            showToast('Info', `Edit user ${userId} not implemented yet`, 'info');
+        });
+
+        $(document).on('click', '.activate-user, .deactivate-user', function (e) {
+            e.preventDefault();
+            const userId = $(this).data('user-id');
+            const isActivate = $(this).hasClass('activate-user');
+
+            $.ajax({
+                url: `http://localhost:5245/api/AdminApi/user/${userId}/status`,
+                method: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify({ c_is_active: isActivate }),
+                success: function () {
+                    showToast('Success', `User ${isActivate ? 'activated' : 'deactivated'} successfully`, 'success');
+                    loadUsers();
+                },
+                error: function (xhr, status, error) {
+                    showToast('Error', `Failed to update user status: ${error}`, 'danger');
+                }
+            });
+        });
+
+        $(document).on('click', '.delete-user', function (e) {
+            e.preventDefault();
+            const userId = $(this).data('user-id');
+
+            if (confirm('Are you sure you want to delete this user?')) {
+                $.ajax({
+                    url: `http://localhost:5245/api/AdminApi/${userId}`,
+                    method: 'DELETE',
+                    success: function () {
+                        showToast('Success', 'User deleted successfully', 'success');
+                        loadUsers();
+                    },
+                    error: function (xhr, status, error) {
+                        showToast('Error', `Failed to delete user: ${error}`, 'danger');
+                    }
+                });
+            }
+        });
+
+        // Logout Handlers
+        $('#logoutBtn, #logoutBtnDropdown').click(function (e) {
+            e.preventDefault();
+            showToast('Info', 'Logout functionality not implemented', 'info');
+        });
+
+        // Toast Notification
+        function showToast(title, message, type) {
+            const toastId = `toast-${Date.now()}`;
+            const bgClass = type === 'success' ? 'bg-success' : type === 'danger' ? 'bg-danger' : type === 'info' ? 'bg-info' : 'bg-warning';
+
+            const toastHtml = `
+                <div id="${toastId}" class="toast align-items-center text-white ${bgClass} border-0" role="alert" style="position: fixed; bottom: 20px; right: 20px; z-index: 1050;">
+                    <div class="d-flex">
+                        <div class="toast-body"><strong>${title}:</strong> ${message}</div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            `;
+
+            $('body').append(toastHtml);
+            const toastElement = $(`#${toastId}`);
+            const toast = new bootstrap.Toast(toastElement[0], { delay: 5000 });
+            toast.show();
+            toastElement.on('hidden.bs.toast', () => toastElement.remove());
+        }
+
+        // Initialize Page
+        loadUsers();
+        initializeNotifications();
+    });
+</script>
+</body>
+
+</html>
