@@ -16,6 +16,8 @@ using System.Text;
 using Elastic.Clients.Elasticsearch;
 using Elastic.Transport;
 using tmp;
+using System.Security.Claims;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +27,9 @@ builder.Services.AddScoped<IAuthInterface>(provider =>
     new Auth(builder.Configuration.GetConnectionString("pgconn")));
 builder.Services.AddSingleton<RabbitMQService>();
 builder.Services.AddSingleton<RedisService>();
+
 builder.Services.AddScoped<NotificationService>();
+builder.Services.AddScoped<IChatService, ChatService>();
 builder.Services.AddScoped<NotificationInterface, NotificationRepo>();
 builder.Services.AddScoped<AdminInterface, AdminRepo>();
 builder.Services.AddScoped<UserInterface, UserRepo>();
@@ -162,6 +166,7 @@ app.UseHttpsRedirection();
 
 // Map SignalR Hub
 app.MapHub<NotificationHub>("/notificationHub");
+app.MapHub<ChatHub>("/chatHub");
 
 app.MapControllers();
 async Task IndexDataOnStartup()
@@ -200,3 +205,19 @@ async Task IndexDataOnStartup()
 // await IndexDataOnStartup();
 
 app.Run();
+
+app.Use(async (context, next) =>
+{
+    var user = context.User;
+    string? userIdClaim = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    int userId = int.TryParse(userIdClaim, out int id) ? id : 0;
+
+    if (userId > 0)
+    {
+        using var scope = app.Services.CreateScope();
+        var consumerService = scope.ServiceProvider.GetRequiredService<RabbitMQConsumerService>();
+        consumerService.StartConsumerForUser(userId);
+    }
+
+    await next();
+});

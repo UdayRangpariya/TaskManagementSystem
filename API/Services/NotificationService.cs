@@ -45,10 +45,10 @@ namespace API.Services
                         message = $"New task '{taskTitle}' was assigned to you";
                         break;
                     case NotificationType.task_updated:
-                        message = $"Task '{taskTitle}' was recently updated by {(senderId == recipientId ? "you" : "another user")}";
+                        message = $"Task '{taskTitle}' was recently updated by {(senderId == recipientId ? "you" : $"user: {senderId}")}";
                         break;
                     case NotificationType.task_deleted:
-                        message = $"Task '{taskTitle}' was deleted by {(senderId == recipientId ? "you" : "another user")}";
+                        message = $"Task '{taskTitle}' was deleted by {(senderId == recipientId ? "you" :  $"user: {senderId}")}";
                         break;
                     default:
                         message = $"Task '{taskTitle}' event occurred";

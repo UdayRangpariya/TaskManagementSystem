@@ -568,10 +568,7 @@
           "Npgsql": "9.0.3"
         },
         "runtime": {
-          "Repositories.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Repositories.dll": {}
         }
       }
     }

@@ -10,9 +10,9 @@ namespace Repositories.Model.AdminModels
     {
 
         public int c_task_id { get; set; }
-        [Required]
+
         public string c_title { get; set; }
-        [Required]
+    
         public string c_description { get; set; }
         public task_status c_status { get; set; } = task_status.pending;
         public int? c_priority { get; set; }

@@ -21,7 +21,7 @@ namespace Repositories.Implementation.AdminRepo
         #region GetAllUsers
         public async Task<List<UserModel>> GetAllUsers()
         {
-            var query = "SELECT * FROM t_users";
+            var query = "SELECT * FROM t_users WHERE c_role = 'user'";
             List<UserModel> userList = new List<UserModel>();
 
             try

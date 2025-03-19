@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Repositories.Model.AdminModels;
 using StackExchange.Redis;
+using Repositories.Model.chat;
 
 namespace API.Services
 {
@@ -409,6 +410,111 @@ namespace API.Services
             return false;
         }
     }
+
+    public async Task CacheChatMessage(ChatMessage message)
+        {
+            try
+            {
+                string messageKey = $"chat:message:{message.c_message_id}";
+                await _db.StringSetAsync(
+                    messageKey,
+                    JsonSerializer.Serialize(message),
+                    expiry: TimeSpan.FromDays(7));
+
+                string conversationKey = $"chat:conversation:{Math.Min(message.c_sender_id, message.c_recipient_id)}:{Math.Max(message.c_sender_id, message.c_recipient_id)}";
+                await _db.ListLeftPushAsync(conversationKey, message.c_message_id);
+
+                if (!message.c_is_read)
+                {
+                    string unreadKey = $"chat:user:{message.c_recipient_id}:unread";
+                    await _db.ListLeftPushAsync(unreadKey, message.c_message_id);
+                    await _db.StringIncrementAsync($"chat:user:{message.c_recipient_id}:unread_count");
+                }
+
+                await _db.KeyExpireAsync(conversationKey, TimeSpan.FromDays(30));
+                await _db.KeyExpireAsync($"chat:user:{message.c_recipient_id}:unread", TimeSpan.FromDays(30));
+                await _db.KeyExpireAsync($"chat:user:{message.c_recipient_id}:unread_count", TimeSpan.FromDays(30));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error caching chat message: {ex.Message}");
+            }
+        }
+
+        public async Task<int> GetUnreadChatCount(int userId)
+        {
+            try
+            {
+                string unreadCountKey = $"chat:user:{userId}:unread_count";
+                var count = await _db.StringGetAsync(unreadCountKey);
+                return count.HasValue && int.TryParse(count, out int value) ? value : 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting unread chat count: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public async Task<List<ChatMessage>> GetChatHistory(int userId1, int userId2, int limit = 50)
+        {
+            try
+            {
+                string conversationKey = $"chat:conversation:{Math.Min(userId1, userId2)}:{Math.Max(userId1, userId2)}";
+                var messageIds = await _db.ListRangeAsync(conversationKey, 0, limit - 1);
+
+                var messages = new List<ChatMessage>();
+                foreach (var id in messageIds)
+                {
+                    string messageKey = $"chat:message:{id}";
+                    var messageJson = await _db.StringGetAsync(messageKey);
+                    if (messageJson.HasValue)
+                    {
+                        var message = JsonSerializer.Deserialize<ChatMessage>(messageJson.ToString());
+                        if (message != null)
+                        {
+                            messages.Add(message);
+                        }
+                    }
+                }
+                return messages.OrderBy(m => m.c_timestamp).ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving chat history: {ex.Message}");
+                return new List<ChatMessage>();
+            }
+        }
+
+        public async Task<bool> MarkChatMessageAsRead(int userId, int messageId)
+        {
+            try
+            {
+                string messageKey = $"chat:message:{messageId}";
+                var messageJson = await _db.StringGetAsync(messageKey);
+                if (!messageJson.HasValue)
+                {
+                    return false;
+                }
+
+                var message = JsonSerializer.Deserialize<ChatMessage>(messageJson.ToString());
+                if (message.c_recipient_id != userId || message.c_is_read)
+                {
+                    return false;
+                }
+
+                message.c_is_read = true;
+                await _db.StringSetAsync(messageKey, JsonSerializer.Serialize(message), TimeSpan.FromDays(7));
+                await _db.ListRemoveAsync($"chat:user:{userId}:unread", messageId.ToString());
+                await _db.StringDecrementAsync($"chat:user:{userId}:unread_count");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error marking chat message as read: {ex.Message}");
+                return false;
+            }
+        }
 
         public void Dispose()
         {
